@@ -5,10 +5,15 @@
 }
 
 <h2>Index</h2>
-
+@using (Html.BeginForm("Index", "kendaraan", FormMethod.Get))
+{
 <p>
-    <a asp-action="Create">Create New</a>
+    ketersediaan: @Html.DropDownList("ktsd", "Pilih ketersediaan")
+    Cari Data : @Html.TextBox("searchString")
+
+    <input type="submit" value="Filter"/>
 </p>
+}
 <table class="table">
     <thead>
         <tr>
